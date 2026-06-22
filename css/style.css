@@ -1,0 +1,210 @@
+/* Base Layout Configurations */
+html {
+  scroll-behavior: smooth; /* Enables smooth animated rolling back to top */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Irish Grover', cursive, sans-serif; /* Set custom main font */
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #c5b496; /* Underlay solid base color behind the image */
+}
+
+/* Fullscreen Native Image Background Handler (Opacity set to 50%) */
+.site-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Pushes background element behind all text layers */
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.50; /* Set background layer visibility exactly to 50% */
+  pointer-events: none; /* Allows cursor selection to pass directly through image */
+}
+
+/* Sticky Top Navigation Bar Styles */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #51422c; /* Dark bar background */
+  border-bottom: 2px solid #362b1d;
+  padding: 10px 40px;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Image Styling */
+.logo-area {
+  width: 150px;
+}
+
+.logo-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+
+/* Dropdown Menu Mechanics */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: -20px;
+  top: 100%;
+  background-color: #dfd5be;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.dropdown-content a {
+  color: #583e26;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  background-color: #ece4d0;
+  margin: 5px 0;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #d2c5a7;
+}
+
+/* Show dropdown items when hovering over menu button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Content Container wrapper */
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 30px 20px 80px 20px;
+}
+
+/* Header Text Pill Styling */
+.hero-banner {
+  background-color: #ece4d0;
+  border-radius: 40px;
+  padding: 25px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.hero-banner h1 {
+  font-size: 2.5rem;
+  color: #000000;
+  font-weight: normal;
+}
+
+/* Island Card Modules */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.island-card {
+  background-color: #ece4d0;
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  min-height: 200px;
+}
+
+.card-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.card-text h2 {
+  font-size: 2.2rem;
+  color: #000000;
+  font-weight: normal;
+}
+
+.card-image {
+  flex: 1;
+  padding: 12px;
+}
+
+.card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  min-height: 180px;
+  object-fit: cover;
+}
+
+/* Bottom Page Accent Bar & Return to Top Link styling */
+.footer-bar {
+  background-color: #51422c; /* Matches navigation bar color layer */
+  border-top: 2px solid #362b1d;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-top: auto;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.footer-bar:hover {
+  background-color: #3e3221; /* Slightly darkens on hover action */
+}

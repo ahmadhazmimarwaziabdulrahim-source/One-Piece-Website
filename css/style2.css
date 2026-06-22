@@ -1,0 +1,240 @@
+/* Base Layout Reset and Smooth Scrolling Configurations */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Irish Grover', cursive, sans-serif;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #c5b496;
+}
+
+/* Fullscreen Native Image Background Handler (Opacity set to 50%) */
+.site-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Pushes background element behind all text layers */
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.50; /* Set background layer visibility exactly to 50% */
+  pointer-events: none; /* Allows cursor selection to pass directly through image */
+}
+
+/* Navigation Bar Styles */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #51422c;
+  border-bottom: 2px solid #362b1d;
+  padding: 10px 40px;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-area {
+  width: 150px;
+}
+
+.logo-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+
+/* Menu Dropdown Interactions */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: -20px;
+  top: 100%;
+  background-color: #dfd5be;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.dropdown-content a {
+  color: #583e26;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  background-color: #ece4d0;
+  margin: 5px 0;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #d2c5a7;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* General Wrapper for Central Body Content Layout */
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 30px 20px 80px 20px;
+}
+
+/* Top Main Showcase Image Display Box */
+.showcase-card {
+  width: 100%;
+  height: 380px;
+  background-color: #ece4d0;
+  border-radius: 40px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.showcase-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Global Content Structural container layout */
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Panel Layout 1: Split Cards (Text Left, Side-Image Box Right) */
+.split-info-card {
+  background-color: #ece4d0;
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  min-height: 250px;
+}
+
+.split-info-card .card-text {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 40px;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.split-info-card .card-side-image {
+  flex: 1;
+  padding: 12px;
+}
+
+.split-info-card .card-side-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  min-height: 220px;
+  object-fit: cover;
+}
+
+/* Panel Layout 2: Middle Crisis Panel (Wide Box Image Stacked directly on top of Text) */
+.vertical-crisis-card {
+  background-color: #ece4d0;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.vertical-crisis-card .card-top-image {
+  width: 100%;
+  height: 250px;
+  padding: 12px 12px 0 12px;
+}
+
+.vertical-crisis-card .card-top-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  display: block;
+}
+
+.vertical-crisis-card .card-bottom-text {
+  padding: 30px 40px;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #000000;
+}
+
+/* Interactive Footer Scroll Accent Bar styling */
+.footer-bar {
+  background-color: #51422c;
+  border-top: 2px solid #362b1d;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-top: auto;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.footer-bar:hover {
+  background-color: #3e3221;
+}
